@@ -13,6 +13,20 @@ public extension View {
         self.modifier(FABModifierImage(systemImage: systemImage, action: action))
     }
     
-    
+    func isVisible(_ value: Bool) -> some View {
+        modifier(IsVisible(isVisible: value))
+    }
 }
 
+struct IsVisible: ViewModifier {
+    
+    let isVisible: Bool
+    
+    func body(content: Content) -> some View {
+        if isVisible {
+            content
+        } else {
+            EmptyView()
+        }
+    }
+}
