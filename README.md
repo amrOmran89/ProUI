@@ -2,9 +2,6 @@
 
 A lightweight SwiftUI component library for reusable and stylish buttons, including primary, outlined, and floating action buttons.
 
-<img src="./Simulator Screenshot - iPhone 16 Pro - 2025-05-31 at 22.32.15.png" alt="Screenshot" width="200" />
-
-
 ## ✨ Features
 
 - **PrimaryButton** — Filled capsule button with customizable colors.
@@ -35,4 +32,5 @@ PrimaryButton(
     // Handle tap
 }
 ```
+<img src="./Simulator Screenshot - iPhone 16 Pro - 2025-05-31 at 22.32.15.png" alt="Screenshot" width="200" />
 
