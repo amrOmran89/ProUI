@@ -13,6 +13,7 @@ public protocol Buttonable {
     var textColor: Color { get }
     var maxWidth: CGFloat? { get }
     var font: Font { get }
+    var icon: String? { get }
 }
 
 public protocol SquareButtonable: Buttonable {

@@ -14,12 +14,14 @@ public struct OutlinedButton: View, Buttonable {
     public let color: Color
     public var font: Font
     public var maxWidth: CGFloat?
+    public var icon: String?
     let action: () -> Void
 
     public init(
         _ text: String,
         textColor: Color = .black,
         font: Font = .body,
+        icon: String? = nil,
         maxWidth: CGFloat? = nil,
         action: @escaping () -> Void
     ) {
@@ -29,27 +31,34 @@ public struct OutlinedButton: View, Buttonable {
         self.font = font
         self.maxWidth = maxWidth
         self.action = action
+        self.icon = icon
     }
     
     public var body: some View {
         Button {
             action()
         } label: {
-            Text(text)
-                .padding()
-                .frame(maxWidth: maxWidth)
-                .background(color.opacity(0))
-                .foregroundStyle(textColor)
-                .clipShape(Capsule())
-                .overlay {
-                    Capsule()
-                        .stroke(textColor)
+            HStack {
+                if let icon {
+                    Image(systemName: icon)
                 }
+                Text(text)
+
+            }
+            .padding()
+            .frame(maxWidth: maxWidth)
+            .background(color.opacity(0))
+            .foregroundStyle(textColor)
+            .clipShape(Capsule())
+            .overlay {
+                Capsule()
+                    .stroke(textColor)
+            }
         }
 
     }
 }
 
 #Preview {
-    OutlinedButton("Button") { }
+    OutlinedButton("Button", icon: "heart") { }
 }

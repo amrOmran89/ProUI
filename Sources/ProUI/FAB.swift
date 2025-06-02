@@ -22,8 +22,10 @@ struct FABModifier: ViewModifier {
                         .foregroundStyle(.white)
                         .padding()
                         .background(Color.black)
-                        .clipShape(Circle())
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
                 }
+                .shadow(radius: 2)
+                .padding(8)
             }
     }
 }
@@ -46,6 +48,7 @@ struct FABModifierImage: ViewModifier {
                         .background(Color.black)
                         .clipShape(Circle())
                 }
+                .shadow(radius: 2)
                 .padding(8)
             }
     }

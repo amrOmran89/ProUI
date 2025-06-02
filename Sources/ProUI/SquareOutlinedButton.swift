@@ -15,6 +15,7 @@ public struct SquareOutlinedButton: View, SquareButtonable {
     public var maxWidth: CGFloat?
     public var font: Font
     public var cornerRadius: CGFloat
+    public var icon: String?
     let action: () -> Void
     
     public init(
@@ -22,6 +23,7 @@ public struct SquareOutlinedButton: View, SquareButtonable {
         cornerRadius: CGFloat = 10,
         color: Color = .black,
         textColor: Color = .black,
+        icon: String? = nil,
         maxWidth: CGFloat? = nil,
         font: Font = .body,
         action: @escaping () -> Void
@@ -33,27 +35,33 @@ public struct SquareOutlinedButton: View, SquareButtonable {
         self.action = action
         self.textColor = textColor
         self.font = font
+        self.icon = icon
     }
     
     public var body: some View {
         Button {
             action()
         } label: {
-            Text(text)
-                .padding()
-                .frame(maxWidth: maxWidth)
-                .background(.white.opacity(0))
-                .foregroundStyle(textColor)
-                .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
-                .overlay {
-                    RoundedRectangle(cornerRadius: cornerRadius)
-                        .stroke(textColor)
+            HStack {
+                if let icon {
+                    Image(systemName: icon)
                 }
+                Text(text)
+            }
+            .padding()
+            .frame(maxWidth: maxWidth)
+            .background(.white.opacity(0))
+            .foregroundStyle(textColor)
+            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+            .overlay {
+                RoundedRectangle(cornerRadius: cornerRadius)
+                    .stroke(textColor)
+            }
         }
-
+        
     }
 }
 
 #Preview {
-    SquareOutlinedButton("Button") { }
+    SquareOutlinedButton("Button", icon: "camera") { }
 }
