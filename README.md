@@ -6,8 +6,10 @@ A lightweight SwiftUI component library for reusable and stylish buttons, includ
 
 - **PrimaryButton** — Filled capsule button with customizable colors.
 - **OutlinedButton** — Capsule-shaped bordered button with optional customization.
-- **Square Buttons** — Square-cornered versions for more compact or alternative UI styles.
-- **Floating Action Button** — A customizable FAB with text or SF Symbol support.
+- **SquareButtons** — Square-cornered versions for more compact or alternative UI styles.
+- **FloatingActionButton** — A customizable FAB with text or SF Symbol support.
+- **OutlinedTextField** - A customizable Text Field with supporting text and/or SF Symbol support.
+- **OutlinedDropDown**
 
 ## 📦 Installation
 
