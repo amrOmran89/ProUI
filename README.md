@@ -1,6 +1,6 @@
 # ProUI
 
-A lightweight SwiftUI component library for reusable and stylish buttons, including primary, outlined, and floating action buttons.
+A lightweight SwiftUI component library for reusable and stylish buttons, textfields, dropdowns, including primary, outlined, and floating action buttons.
 
 ## ✨ Features
 
